@@ -1,6 +1,5 @@
 import React, {FC, Fragment} from "react"
 import {Link} from "react-router-dom"
-import "./notFound.css"
 
 const NotFound: FC = () => {
   const content = {

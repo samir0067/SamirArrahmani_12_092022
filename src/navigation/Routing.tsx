@@ -7,7 +7,7 @@ function Routing(){
 
   return (
     <Routes key={location.pathname} location={location}>
-      <Route path="*" element={<NotFound/>}/>
+      <Route path="/" element={<NotFound/>}/>
     </Routes>
   )
 }
