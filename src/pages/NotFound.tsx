@@ -1,4 +1,4 @@
-import React, {FC, Fragment} from "react"
+import React, {FC} from "react"
 import {Link} from "react-router-dom"
 
 const NotFound: FC = () => {
@@ -9,15 +9,13 @@ const NotFound: FC = () => {
   }
 
   return (
-    <Fragment>
-      <main>
-        <h1>{content.title}</h1>
-        <p>{content.message}</p>
-        <Link className="linkRollback" to="/">
-          {content.link}
-        </Link>
-      </main>
-    </Fragment>
+    <main className="notFound">
+      <h1 className="notFound_title">{content.title}</h1>
+      <p className="notFound_text">{content.message}</p>
+      <Link className="notFound_link" to="/">
+        {content.link}
+      </Link>
+    </main>
   )
 }
 
