@@ -1,12 +1,12 @@
-import React, {FC} from "react"
-import {Link} from "react-router-dom"
+import React, { FC } from "react";
+import { Link } from "react-router-dom";
 
 const NotFound: FC = () => {
   const content = {
     title: "404",
     message: "Oups! La page que vous demandez n'existe pas.",
-    link: "Retourner sur la page d’accueil"
-  }
+    link: "Retourner sur la page d’accueil",
+  };
 
   return (
     <main className="notFound">
@@ -16,7 +16,7 @@ const NotFound: FC = () => {
         {content.link}
       </Link>
     </main>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;
