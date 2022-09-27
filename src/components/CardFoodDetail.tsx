@@ -1,26 +1,29 @@
 import React, { FC } from "react";
 
+/**
+ * type assigned to the component
+ */
 type CardFoodDetailProps = {
   value: string;
   property: string;
-  feature: string;
+  unit: string;
   srcImg: string;
   altImg: string;
 };
 
 /**
- *
- * @param { string } value
- * @param { string } property
- * @param { string } feature
- * @param { string } srcImg
- * @param { string } altImg
+ * Functional component of the food type and its properties
+ * @param { string } value measurements of properties
+ * @param { string } property food property
+ * @param { string } unit type of unit
+ * @param { string } srcImg Path pointing to the image
+ * @param { string } altImg Description of the image
  * @constructor
  */
 export const CardFoodDetail: FC<CardFoodDetailProps> = ({
   value,
   property,
-  feature,
+  unit,
   srcImg,
   altImg,
 }: CardFoodDetailProps) => {
@@ -32,9 +35,9 @@ export const CardFoodDetail: FC<CardFoodDetailProps> = ({
       <div className="cardFoodDetail_content">
         <h4 className="cardFoodDetail_content_title">
           {value}
-          {property}
+          {unit}
         </h4>
-        <p className="cardFoodDetail_content_text">{feature}</p>
+        <p className="cardFoodDetail_content_text">{property}</p>
       </div>
     </div>
   );
