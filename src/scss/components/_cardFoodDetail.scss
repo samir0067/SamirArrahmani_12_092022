@@ -1,0 +1,22 @@
+@use "../utils/variables";
+
+
+.cardFoodDetail {
+  display: flex;
+  padding: 1rem;
+  &_containing {
+
+    &_img {
+
+    }
+  }
+  &_content {
+
+    &_title {
+
+    }
+    &_text {
+
+    }
+  }
+}
