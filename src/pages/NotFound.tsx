@@ -1,5 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "layout/NavBar";
 
 const NotFound: FC = () => {
   const content = {
@@ -9,13 +10,16 @@ const NotFound: FC = () => {
   };
 
   return (
-    <main className="notFound">
-      <h1 className="notFound_title">{content.title}</h1>
-      <p className="notFound_text">{content.message}</p>
-      <Link className="notFound_link" to="/">
-        {content.link}
-      </Link>
-    </main>
+    <Fragment>
+      <NavBar />
+      <main className="notFound">
+        <h1 className="notFound_title">{content.title}</h1>
+        <p className="notFound_text">{content.message}</p>
+        <Link className="notFound_link" to="/">
+          {content.link}
+        </Link>
+      </main>
+    </Fragment>
   );
 };
 

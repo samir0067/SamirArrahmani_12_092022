@@ -1,6 +1,8 @@
 // Utiles
-@use "utils/base";
 @use "utils/variables";
+
+// Layout
+@use "layout/navBar";
 
 // Pages
 @use "pages/notFound";
