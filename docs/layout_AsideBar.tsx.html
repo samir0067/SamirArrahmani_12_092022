@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> CardFoodDetail</title>
+  <title> layout/AsideBar.tsx</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,309 +79,54 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Class</p>
-                    <h1>CardFoodDetail</h1>
+                    <p>Source</p>
+                    <h1>layout/AsideBar.tsx</h1>
                 </header>
                 
 
 
 
-
-<section>
-
-<header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>CardFoodDetail<span class="signature">(value, property, unit, srcImg, altImg)</span><span class="type-signature"></span></h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class='vertical-section'>
-                <div class="members">
-                    <div class="member">
-                        <div class=name>
-                            <span class="tag">Constructor</span>
-                        </div>
-                        
-
-
-    
-    <h4 class="name" id="CardFoodDetail">
-        <a class="href-link" href="#CardFoodDetail">#</a>
-        
-        <span class="code-name">
-            
-                new CardFoodDetail<span class="signature">(value, property, unit, srcImg, altImg)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Functional component of the food type and its properties</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>value</code></td>
-  
-
-  <td class="type">
-  
-      
-<code class="param-type">string</code>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>measurements of properties</p></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>property</code></td>
-  
-
-  <td class="type">
-  
-      
-<code class="param-type">string</code>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>food property</p></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>unit</code></td>
-  
-
-  <td class="type">
-  
-      
-<code class="param-type">string</code>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>type of unit</p></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>srcImg</code></td>
-  
-
-  <td class="type">
-  
-      
-<code class="param-type">string</code>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>Path pointing to the image</p></td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>altImg</code></td>
-  
-
-  <td class="type">
-  
-      
-<code class="param-type">string</code>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>Description of the image</p></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="components_CardFoodDetail.tsx.html" class="button">View Source</a>
-            <span>
-                <a href="components_CardFoodDetail.tsx.html">components/CardFoodDetail.tsx</a>, <a href="components_CardFoodDetail.tsx.html#line12">line 12</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { FC } from "react";
+import fitness from "assets/fitness.svg";
+import meditation from "assets/meditation.svg";
+import pool from "assets/pool.svg";
+import bicycle from "assets/bicycle.svg";
+
+/**
+ *
+ * @constructor
+ */
+const AsideBar: FC = () => {
+  return (
+    &lt;aside className="asideBar">
+      &lt;ul className="asideBar_ul">
+        &lt;li className="asideBar_ul_li">
+          &lt;img className="logoAsideBar" src={meditation} alt="logo meditation" />
+        &lt;/li>
+        &lt;li className="asideBar_ul_li">
+          &lt;img className="logoAsideBar" src={pool} alt="logo pool" />
+        &lt;/li>
+        &lt;li className="asideBar_ul_li">
+          &lt;img className="logoAsideBar" src={bicycle} alt="logo bicycle" />
+        &lt;/li>
+        &lt;li className="asideBar_ul_li">
+          &lt;img className="logoAsideBar" src={fitness} alt="logo fitness" />
+        &lt;/li>
+      &lt;/ul>
+      &lt;div className="sidebar_copyright">
+        &lt;p>Copyright, SportSee 2020&lt;/p>
+      &lt;/div>
+    &lt;/aside>
+  );
+};
+
+export default AsideBar;
+</code></pre>
+        </article>
+    </section>
 
 
 

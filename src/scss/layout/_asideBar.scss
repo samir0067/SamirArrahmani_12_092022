@@ -1,0 +1,44 @@
+@use "../utils/variables";
+
+.asideBar {
+  position: absolute;
+  left: 0;
+  width: 117px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: variables.$black;
+  z-index: variables.$middleZIndex;
+  &_ul {
+    width: 100%;
+    padding-left: 0;
+    margin: 23%;
+    &_li {
+      margin-bottom: 20px;
+    }
+  }
+
+  &_copyright {
+    position: absolute;
+    bottom: 59px;
+    p {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 24px;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .asideBar {
+    width: 70px;
+  }
+  .logoAsideBar {
+    height: 50px;
+    width: auto;
+  }
+}

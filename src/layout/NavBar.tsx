@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 import Logo from "assets/logo.svg";
 
 const NavBar: FC = () => {
-  const [profileId, setProfil] = useState();
+  const [userId, setUser] = useState();
 
   return (
-    <header>
-      <div className="container">
+    <header className="header">
+      <div className="header_container">
         <img className="logoNavBar" src={Logo} alt="logo" />
         <ul>
           <li>
@@ -16,17 +16,17 @@ const NavBar: FC = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/profil/${profileId}`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/profil/${userId}`}>
               Profil
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/reglage/${profileId}`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/reglage/${userId}`}>
               Réglage
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/communaute/${profileId}`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/communaute/${userId}`}>
               Communauté
             </NavLink>
           </li>
