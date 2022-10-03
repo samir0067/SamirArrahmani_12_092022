@@ -90,6 +90,29 @@
     width: auto;
   }
 }
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login_childContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  background-color: #2b74b1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .notFound {
   height: 100vh;
   width: 100vw;
@@ -107,17 +130,4 @@
 }
 .notFound_link {
   color: #74798C;
-}
-
-.login {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.login_childContainer {
-  display: flex;
-  flex-direction: column;
 }

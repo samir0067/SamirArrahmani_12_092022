@@ -1,12 +1,7 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "pages/Login";
 
 const NotFound: FC = () => {
-  const currentUser = useContext(UserContext);
-
-  console.log("currentUser => ", currentUser);
-
   const content = {
     title: "404",
     message: "Oups! La page que vous demandez n'existe pas.",

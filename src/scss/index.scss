@@ -6,5 +6,6 @@
 @use "layout/asideBar";
 
 // Pages
-@use "pages/notFound";
 @use "pages/login";
+@use "pages/dashboard";
+@use "pages/notFound";

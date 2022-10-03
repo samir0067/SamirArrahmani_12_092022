@@ -1,48 +1,51 @@
-import React, { createContext, FC, useState } from "react";
+import React, { FC, Fragment, useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import NavBar from "layout/NavBar";
 import AsideBar from "layout/AsideBar";
-import { IUserData } from "utils/interface";
-import getUserData from "services/getUserData";
-
-export const UserContext = createContext<IUserData | undefined>(undefined);
-
-/**
- * Mock Data
- */
-const getCecilia: string = process.env.PUBLIC_URL + "/mocks/ceciliaRatorezData.json";
-const getKarl: string = process.env.PUBLIC_URL + "/mocks/karlDovineauData.json";
+import { UserMainData } from "utils/types";
+import getUserMainData from "services/getUserMainData";
 
 const Login: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [user, setUser] = useState<IUserData | undefined>(undefined);
+  const [users, setUsers] = useState<UserMainData[]>([]);
+  const [user, setUser] = useState<UserMainData | undefined>(undefined);
 
-  const handleUser = (pathId: string) => {
-    getUserData(pathId)
-      .then((resultData) => {
-        setUser(resultData);
-      })
-      .then(() => navigate("/dashboard"));
+  useEffect(() => {
+    getUserMainData().then((resultData) => {
+      setUsers(resultData);
+    });
+  }, []);
+
+  const handleUser = (userId: number) => {
+    users.filter((userFilter) => {
+      if (userFilter.id === userId) {
+        setUser(userFilter);
+      }
+    });
   };
 
-  console.log("user ", user);
+  useEffect(() => {
+    if (user?.id) {
+      navigate("/dashboard", { state: user });
+    }
+  }, [user]);
 
   return (
-    <UserContext.Provider value={user}>
+    <Fragment>
       <NavBar />
       <AsideBar />
       <main className="login">
         {location.pathname === "/" ? (
           <div className="login_childContainer">
-            <button onClick={() => handleUser(getCecilia)}>Cecilia Ratorez</button>
-            <button onClick={() => handleUser(getKarl)}>Karl Dovineau</button>
+            <button onClick={() => handleUser(12)}>Karl Dovineau</button>
+            <button onClick={() => handleUser(18)}>Cecilia Ratorez</button>
           </div>
         ) : (
           <Outlet />
         )}
       </main>
-    </UserContext.Provider>
+    </Fragment>
   );
 };
 
