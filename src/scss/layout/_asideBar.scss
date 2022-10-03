@@ -12,9 +12,7 @@
   background: variables.$black;
   z-index: variables.$middleZIndex;
   &_ul {
-    width: 100%;
     padding-left: 0;
-    margin: 23%;
     &_li {
       margin-bottom: 20px;
     }
@@ -28,7 +26,7 @@
       font-weight: 500;
       line-height: 24px;
       transform: rotate(180deg);
-      writing-mode: vertical-rl;
+      writing-mode: vertical-lr;
     }
   }
 }

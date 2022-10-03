@@ -24,7 +24,7 @@ const AsideBar: FC = () => {
           <img className="logoAsideBar" src={fitness} alt="logo fitness" />
         </li>
       </ul>
-      <div className="sidebar_copyright">
+      <div className="asideBar_copyright">
         <p>Copyright, SportSee 2020</p>
       </div>
     </aside>
