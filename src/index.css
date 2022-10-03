@@ -1,10 +1,95 @@
-body {
-  background-color: #C4C4C4;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 91px;
+  background-color: #020203;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.header_container {
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+.header_container ul {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+.header_container ul li:hover a {
+  filter: brightness(0.5);
+}
+.header_container ul li:hover a.active {
+  color: #FF0101;
+}
+.header_container ul a {
+  color: #ffffff;
+  font-size: 24px;
+}
+.header_container ul a.active {
+  color: #FF0101;
 }
 
+.logoNavBar {
+  display: block;
+  margin-left: 29px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  .logoNavBar {
+    height: 50px;
+    width: auto;
+  }
+}
+.asideBar {
+  position: absolute;
+  left: 0;
+  width: 117px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #020203;
+  z-index: 5;
+}
+.asideBar_ul {
+  padding-left: 0;
+}
+.asideBar_ul_li {
+  margin-bottom: 20px;
+}
+.asideBar_copyright {
+  position: absolute;
+  bottom: 59px;
+}
+.asideBar_copyright p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+}
+
+@media (max-width: 768px) {
+  .asideBar {
+    width: 70px;
+  }
+  .logoAsideBar {
+    height: 50px;
+    width: auto;
+  }
+}
 .notFound {
   height: 100vh;
   width: 100vw;
@@ -22,4 +107,17 @@ body {
 }
 .notFound_link {
   color: #74798C;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login_childContainer {
+  display: flex;
+  flex-direction: column;
 }
