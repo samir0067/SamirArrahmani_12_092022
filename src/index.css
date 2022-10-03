@@ -113,6 +113,36 @@
   justify-content: center;
 }
 
+.profile {
+  background-color: #659f44;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting {
+  background-color: #2bb18d;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.community {
+  background-color: #a42bb1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .notFound {
   height: 100vh;
   width: 100vw;

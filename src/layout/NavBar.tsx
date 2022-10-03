@@ -1,32 +1,32 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "assets/logo.svg";
 
 const NavBar: FC = () => {
-  const [userId, setUser] = useState();
-
   return (
     <header className="header">
       <div className="header_container">
-        <img className="logoNavBar" src={Logo} alt="logo" />
+        <a href="/">
+          <img className="logoNavBar" src={Logo} alt="logo" />
+        </a>
         <ul>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/dashboard`}>
               Accueil
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/profil/${userId}`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/profil`}>
               Profil
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/reglage/${userId}`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/reglage`}>
               Réglage
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/communaute/${userId}`}>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={`/communaute`}>
               Communauté
             </NavLink>
           </li>
