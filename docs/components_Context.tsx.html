@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> layout/NavBar.tsx</title>
+  <title> components/Context.tsx</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>layout/NavBar.tsx</h1>
+                    <h1>components/Context.tsx</h1>
                 </header>
                 
 
@@ -89,62 +89,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React, { FC, useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "assets/logo.svg";
-import Button from "components/Button";
-import { UserContext } from "components/Context";
+            <pre class="prettyprint source linenums"><code>import type { ReactNode } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { User, UserMainData } from "utils/types";
+import getUserMainData from "services/getUserMainData";
 
 /**
- * Page navigation system, with removal of the global state when returning to the home page
- * @constructor
+ * creation of the user context
  */
-const NavBar: FC = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
+export const UserContext = createContext&lt;User>({
+  users: undefined,
+  user: undefined,
+  setUser: () => {
+    /* do nothing */
+  },
+});
 
-  const handleBackHome = () => {
-    setUser(undefined);
-    navigate("/");
-  };
+/**
+ * use of context to wrap all child components
+ * @param { ReactNode } children
+ */
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState&lt;UserMainData | undefined>(undefined);
+  const [users, setUsers] = useState&lt;UserMainData[] | undefined>(undefined);
 
-  return (
-    &lt;header className="header">
-      &lt;div className="header_container">
-        &lt;img className="logoNavBar" src={Logo} alt="logo" />
-        &lt;div className="header_container_links">
-          &lt;Button
-            isLink
-            title="Accueil"
-            className={location.pathname === "/" ? "active" : ""}
-            onClick={handleBackHome}
-          />
-          &lt;Button
-            isLink
-            title="Profil"
-            className={location.pathname === "/profil" ? "active" : ""}
-            onClick={() => navigate("/profil")}
-          />
-          &lt;Button
-            isLink
-            title="Réglage"
-            className={location.pathname === "/reglage" ? "active" : ""}
-            onClick={() => navigate("/reglage")}
-          />
-          &lt;Button
-            isLink
-            title="Communauté"
-            className={location.pathname === "/communaute" ? "active" : ""}
-            onClick={() => navigate("/communaute")}
-          />
-        &lt;/div>
-      &lt;/div>
-    &lt;/header>
-  );
+  useEffect(() => {
+    getUserMainData().then((userData) => setUsers(userData));
+  }, []);
+
+  return &lt;UserContext.Provider value={{ users, user, setUser }}>{children}&lt;/UserContext.Provider>;
 };
-
-export default NavBar;
 </code></pre>
         </article>
     </section>

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> layout/NavBar.tsx</title>
+  <title> components/Button.tsx</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>layout/NavBar.tsx</h1>
+                    <h1>components/Button.tsx</h1>
                 </header>
                 
 
@@ -89,62 +89,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React, { FC, useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "assets/logo.svg";
-import Button from "components/Button";
-import { UserContext } from "components/Context";
+            <pre class="prettyprint source linenums"><code>import React, { FC } from "react";
 
 /**
- * Page navigation system, with removal of the global state when returning to the home page
- * @constructor
+ * Type for Button component
  */
-const NavBar: FC = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
+type ButtonProps = {
+  title: string;
+  onClick: () => void;
+  className?: string;
+  isLink?: boolean;
+};
 
-  const handleBackHome = () => {
-    setUser(undefined);
-    navigate("/");
-  };
-
+/**
+ * Generic button used as a navigation link or button in the application
+ * @param { string } title button title
+ * @param { () => void } onClick to call a function
+ * @param { string } className customizable style if necessary
+ * @param { boolean } isLink if true style link use
+ */
+const Button: FC&lt;ButtonProps> = ({ title, onClick, className, isLink }: ButtonProps) => {
   return (
-    &lt;header className="header">
-      &lt;div className="header_container">
-        &lt;img className="logoNavBar" src={Logo} alt="logo" />
-        &lt;div className="header_container_links">
-          &lt;Button
-            isLink
-            title="Accueil"
-            className={location.pathname === "/" ? "active" : ""}
-            onClick={handleBackHome}
-          />
-          &lt;Button
-            isLink
-            title="Profil"
-            className={location.pathname === "/profil" ? "active" : ""}
-            onClick={() => navigate("/profil")}
-          />
-          &lt;Button
-            isLink
-            title="Réglage"
-            className={location.pathname === "/reglage" ? "active" : ""}
-            onClick={() => navigate("/reglage")}
-          />
-          &lt;Button
-            isLink
-            title="Communauté"
-            className={location.pathname === "/communaute" ? "active" : ""}
-            onClick={() => navigate("/communaute")}
-          />
-        &lt;/div>
-      &lt;/div>
-    &lt;/header>
+    &lt;button onClick={onClick} className={isLink ? `link ${className}` : "button"}>
+      {title}
+    &lt;/button>
   );
 };
 
-export default NavBar;
+Button.defaultProps = {
+  isLink: false,
+};
+
+export default Button;
 </code></pre>
         </article>
     </section>

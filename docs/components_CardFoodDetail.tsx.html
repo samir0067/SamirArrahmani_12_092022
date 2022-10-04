@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="AsideBar.html">AsideBar</a></li><li><a href="CardFoodDetail.html">CardFoodDetail</a></li><li><a href="NavBar.html">NavBar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#userMainData">userMainData</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="NavBar.html">NavBar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AsideBar">AsideBar</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CardFoodDetail">CardFoodDetail</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#UserContext">UserContext</a></li><li><a href="global.html#userMainData">userMainData</a></li><li><a href="global.html#UserProvider">UserProvider</a></li></ul></div>
                 
             </nav>
         </div>
@@ -92,7 +92,7 @@
             <pre class="prettyprint source linenums"><code>import React, { FC } from "react";
 
 /**
- * type assigned to the component
+ * type for CardFoodDetail component
  */
 type CardFoodDetailProps = {
   value: string;
@@ -109,7 +109,6 @@ type CardFoodDetailProps = {
  * @param { string } unit type of unit
  * @param { string } srcImg Path pointing to the image
  * @param { string } altImg Description of the image
- * @constructor
  */
 export const CardFoodDetail: FC&lt;CardFoodDetailProps> = ({
   value,
