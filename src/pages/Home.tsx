@@ -26,7 +26,7 @@ const Home: FC = () => {
 
   return (
     <section>
-      <div className="home_childContainer">
+      <div className="home">
         <Button title="Karl Dovineau" onClick={() => handleUser(12)} />
         <Button title="Cecilia Ratorez" onClick={() => handleUser(18)} />
       </div>
