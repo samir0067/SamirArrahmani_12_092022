@@ -28,6 +28,7 @@ const Profile: FC = () => {
         </h1>
         <h2>{content.subtitle}</h2>
       </div>
+      <div></div>
     </section>
   );
 };
