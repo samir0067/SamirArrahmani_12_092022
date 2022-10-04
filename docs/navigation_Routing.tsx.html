@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> services/getUserMainData.ts</title>
+  <title> navigation/Routing.tsx</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>services/getUserMainData.ts</h1>
+                    <h1>navigation/Routing.tsx</h1>
                 </header>
                 
 
@@ -89,30 +89,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import axios from "axios";
-import { UserMainData } from "utils/types";
+            <pre class="prettyprint source linenums"><code>import React, { Fragment } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import NotFound from "pages/NotFound";
+import Home from "pages/Home";
+import Setting from "pages/Setting";
+import Community from "pages/Community";
+import Profile from "pages/Profile";
+import NavBar from "layout/NavBar";
+import AsideBar from "layout/AsideBar";
 
 /**
- * Mock Data
+ * Navigation page with layout element
  */
-const userMainData: string = process.env.PUBLIC_URL + "/mocks/userMainData.json";
-const getKarl: string = process.env.PUBLIC_URL + "/mocks/karlDovineauData.json";
+const Routing = () => {
+  const location = useLocation();
 
-/**
- * Get users from api
- */
-const getUserMainData = (): Promise&lt;UserMainData[]> => {
-  return axios
-    .get(`${userMainData}`)
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      throw error.response;
-    });
+  return (
+    &lt;main>
+      &lt;NavBar />
+      &lt;AsideBar />
+      &lt;Routes key={location.pathname} location={location}>
+        &lt;Route path="/" element={&lt;Home />} />
+        &lt;Route path="/profil" element={&lt;Profile />} />
+        &lt;Route path="/reglage" element={&lt;Setting />} />
+        &lt;Route path="/communaute" element={&lt;Community />} />
+        &lt;Route path="*" element={&lt;NotFound />} />
+      &lt;/Routes>
+    &lt;/main>
+  );
 };
 
-export default getUserMainData;
+export default Routing;
 </code></pre>
         </article>
     </section>
