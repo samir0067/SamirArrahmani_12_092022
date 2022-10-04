@@ -1,20 +1,27 @@
-import React, { FC } from "react";
-import { useLocation } from "react-router-dom";
+import React, { FC, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "components/Context";
 
 const Setting: FC = () => {
-  const location = useLocation();
-  console.log("user => ", location.state);
+  const navigate = useNavigate();
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    if (user === undefined) {
+      navigate("/");
+    }
+  }, [user]);
 
   const content = {
-    title: "",
+    title: "Réglage",
     message: "",
     link: "",
   };
 
   return (
-    <>
-      <main className="setting">{content.title}</main>
-    </>
+    <section>
+      <div className="setting"> {content.title}</div>
+    </section>
   );
 };
 

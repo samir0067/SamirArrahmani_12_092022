@@ -5,7 +5,7 @@
   top: 0;
   z-index: variables.$topZIndex;
   width: 100vw;
-  height: 91px;
+  height: 9.79vh;
   background-color: variables.$black;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   &_container {
@@ -16,30 +16,17 @@
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    ul {
+    &_links {
       padding-left: 0;
       display: flex;
       justify-content: space-around;
       flex: 1;
-      li {
-        margin-left: 10px;
-      }
-      li:hover a {
-        filter: brightness(0.50);
-
-        &.active {
-          color: variables.$redText;
-        }
-      }
-      a {
-        color: variables.$white;
-        font-size: 24px;
-        &.active {
-          color: variables.$redText;
-        }
-      }
     }
   }
+}
+
+.active {
+  color: variables.$redText;
 }
 
 .logoNavBar {
@@ -49,7 +36,7 @@
 
 @media (max-width: 768px) {
   .header {
-    height: 70px;
+    height: 7.53vh;
   }
 
   .logoNavBar {
@@ -59,11 +46,7 @@
 }
 
 
-@media (max-width: 585px) {
-  .header_container ul li a {
-    font-size: 17px;
-  }
-
+@media (max-width: 625px) {
   .logoNavBar {
     display: none;
   }

@@ -9,13 +9,15 @@ const NotFound: FC = () => {
   };
 
   return (
-    <main className="notFound">
-      <h1 className="notFound_title">{content.title}</h1>
-      <p className="notFound_text">{content.message}</p>
-      <Link className="notFound_link" to="/">
-        {content.link}
-      </Link>
-    </main>
+    <section>
+      <div className="notFound">
+        <h1 className="notFound_title">{content.title}</h1>
+        <p className="notFound_text">{content.message}</p>
+        <Link className="notFound_link" to="/">
+          {content.link}
+        </Link>
+      </div>
+    </section>
   );
 };
 

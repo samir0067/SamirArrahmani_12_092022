@@ -1,3 +1,9 @@
+export type User = {
+  users?: UserMainData[];
+  user?: UserMainData;
+  setUser: (u: UserMainData | undefined) => void;
+};
+
 export type UserMainData = {
   id: number;
   userInfos: {

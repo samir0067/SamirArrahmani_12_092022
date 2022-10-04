@@ -1,14 +1,39 @@
 // Utiles
 @use "utils/variables";
 
+// Components
+@use "components/button";
+
 // Layout
 @use "layout/navBar";
 @use "layout/asideBar";
 
 // Pages
-@use "pages/login";
-@use "pages/dashboard";
+@use "pages/home";
 @use "pages/profile";
 @use "pages/setting";
 @use "pages/community";
 @use "pages/notFound";
+
+main {
+  display: flex;
+}
+
+section {
+  width: 100vw;
+  height: 90.21vh;
+  padding-left: 117px;
+  padding-top: 9.79vh;
+  display: flex;
+  background-color: #2b74b1;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  section {
+    height: 92.47vh;
+    padding-left: 70px;
+    padding-top: 7.53vh;
+  }
+}

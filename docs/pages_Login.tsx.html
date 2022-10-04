@@ -7,7 +7,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> pages/Login.tsx</title>
+  <title> pages/Home.tsx</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>pages/Login.tsx</h1>
+                    <h1>pages/Home.tsx</h1>
                 </header>
 
 
@@ -104,7 +104,7 @@ export const Context = createContext&lt;IUserData | undefined>(undefined);
 const getCecilia: string = process.env.PUBLIC_URL + "/mocks/ceciliaRatorezData.json";
 const getKarl: string = process.env.PUBLIC_URL + "/mocks/karlDovineauData.json";
 
-const Login: FC = () => {
+const Home: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [user, setUser] = useState&lt;IUserData | undefined>(undefined);
@@ -137,7 +137,7 @@ const Login: FC = () => {
   );
 };
 
-export default Login;
+export default Home;
 </code></pre>
         </article>
     </section>

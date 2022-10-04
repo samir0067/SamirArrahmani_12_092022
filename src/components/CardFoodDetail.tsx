@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 /**
- * type assigned to the component
+ * type for CardFoodDetail component
  */
 type CardFoodDetailProps = {
   value: string;
@@ -18,7 +18,6 @@ type CardFoodDetailProps = {
  * @param { string } unit type of unit
  * @param { string } srcImg Path pointing to the image
  * @param { string } altImg Description of the image
- * @constructor
  */
 export const CardFoodDetail: FC<CardFoodDetailProps> = ({
   value,
