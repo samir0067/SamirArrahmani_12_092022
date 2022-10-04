@@ -1,22 +1,14 @@
 @use "../utils/variables";
 
-.notFound {
+.home {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 12px;
   text-align: center;
   &_title {
-    font-size: 65px;
     color: variables.$redText;
-  }
-  &_text {
-    color: variables.$blackText;
-  }
-  &_link {
-    color: variables.$greyText;
   }
 }

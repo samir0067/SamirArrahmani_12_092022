@@ -4,11 +4,14 @@ import Routing from "navigation/Routing";
 import { BrowserRouter } from "react-router-dom";
 import "normalize.css";
 import "index.css";
+import { UserProvider } from "components/Context";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routing />
+      <UserProvider>
+        <Routing />
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

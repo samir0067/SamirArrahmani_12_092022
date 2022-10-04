@@ -5,7 +5,7 @@ import pool from "assets/pool.svg";
 import bicycle from "assets/bicycle.svg";
 
 /**
- * @constructor
+ * A side navigation bar
  */
 const AsideBar: FC = () => {
   return (

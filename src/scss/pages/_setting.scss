@@ -1,14 +1,11 @@
 @use "../utils/variables";
 
-.login {
-  height: 100vh;
-  width: 100vw;
+.setting {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  &_childContainer {
-    display: flex;
-    flex-direction: column;
-  }
+  text-align: center;
 }
