@@ -6,7 +6,6 @@ import { UserContext } from "components/Context";
 
 /**
  * Page navigation system, with removal of the global state when returning to the home page
- * @constructor
  */
 const NavBar: FC = () => {
   const location = useLocation();

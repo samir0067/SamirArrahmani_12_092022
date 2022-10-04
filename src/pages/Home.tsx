@@ -24,11 +24,20 @@ const Home: FC = () => {
     }
   }, [user]);
 
+  const content = {
+    title: "SportSee",
+    karlButton: "Karl Dovineau",
+    ceciliaButton: "Cecilia Ratorez",
+  };
+
   return (
     <section>
       <div className="home">
-        <Button title="Karl Dovineau" onClick={() => handleUser(12)} />
-        <Button title="Cecilia Ratorez" onClick={() => handleUser(18)} />
+        <h1 className="home_title">{content.title}</h1>
+        <div>
+          <Button title={content.karlButton} onClick={() => handleUser(12)} />
+          <Button title={content.ceciliaButton} onClick={() => handleUser(18)} />
+        </div>
       </div>
     </section>
   );

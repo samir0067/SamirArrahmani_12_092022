@@ -121,16 +121,15 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-
-@media (max-width: 768px) {
-  .home {
-    flex-direction: column;
-  }
+.home_title {
+  color: #FF0101;
 }
+
 .profile {
   width: 100%;
   height: 100%;

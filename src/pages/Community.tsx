@@ -14,9 +14,6 @@ const Community: FC = () => {
 
   const content = {
     title: "Communauté",
-    subtitle: "",
-    message: "",
-    link: "",
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import NotFound from "pages/NotFound";
 import Home from "pages/Home";
@@ -8,6 +8,9 @@ import Profile from "pages/Profile";
 import NavBar from "layout/NavBar";
 import AsideBar from "layout/AsideBar";
 
+/**
+ * Navigation page with layout element
+ */
 const Routing = () => {
   const location = useLocation();
 
