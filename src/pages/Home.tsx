@@ -7,9 +7,6 @@ const Home: FC = () => {
   const navigate = useNavigate();
   const { user, users, setUser } = useContext(UserContext);
 
-  console.log("user context", users);
-  console.log("user context", user);
-
   const handleUser = (userId: number) => {
     users?.filter((userFilter) => {
       if (userFilter.id === userId) {
