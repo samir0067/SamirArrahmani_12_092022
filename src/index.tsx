@@ -4,7 +4,7 @@ import Routing from "navigation/Routing";
 import { BrowserRouter } from "react-router-dom";
 import "normalize.css";
 import "index.css";
-import { UserProvider } from "components/Context";
+import { UserProvider } from "components/UserProvider";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

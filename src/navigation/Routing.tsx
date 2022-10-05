@@ -20,9 +20,9 @@ const Routing = () => {
       <AsideBar />
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Home />} />
-        <Route path="/profil" element={<Profile />} />
-        <Route path="/reglage" element={<Setting />} />
-        <Route path="/communaute" element={<Community />} />
+        <Route path="/user/:id" element={<Profile />} />
+        <Route path="/setting" element={<Setting />} />
+        <Route path="/community" element={<Community />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </main>

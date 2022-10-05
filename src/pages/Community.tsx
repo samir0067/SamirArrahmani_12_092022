@@ -1,6 +1,6 @@
 import React, { FC, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "components/Context";
+import { UserContext } from "utils/userContext";
 
 const Community: FC = () => {
   const navigate = useNavigate();

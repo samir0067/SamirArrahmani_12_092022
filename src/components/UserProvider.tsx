@@ -1,18 +1,8 @@
 import type { ReactNode } from "react";
-import React, { createContext, useEffect, useState } from "react";
-import { User, UserMainData } from "utils/types";
+import React, { useEffect, useState } from "react";
+import { UserMainData } from "utils/types";
 import getUserMainData from "services/getUserMainData";
-
-/**
- * creation of the user context
- */
-export const UserContext = createContext<User>({
-  users: undefined,
-  user: undefined,
-  setUser: () => {
-    /* do nothing */
-  },
-});
+import { UserContext } from "utils/userContext";
 
 /**
  * use of context to wrap all child components

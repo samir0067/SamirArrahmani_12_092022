@@ -13,7 +13,7 @@ type ButtonProps = {
 /**
  * Generic button used as a navigation link or button in the application
  * @param { string } title button title
- * @param { () => void } onClick to call a function
+ * @param { function } onClick to call a function
  * @param { string } className customizable style if necessary
  * @param { boolean } isLink if true style link use
  */

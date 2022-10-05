@@ -111,9 +111,9 @@ const Routing = () => {
       &lt;AsideBar />
       &lt;Routes key={location.pathname} location={location}>
         &lt;Route path="/" element={&lt;Home />} />
-        &lt;Route path="/profil" element={&lt;Profile />} />
-        &lt;Route path="/reglage" element={&lt;Setting />} />
-        &lt;Route path="/communaute" element={&lt;Community />} />
+        &lt;Route path="/user/:id" element={&lt;Profile />} />
+        &lt;Route path="/setting" element={&lt;Setting />} />
+        &lt;Route path="/community" element={&lt;Community />} />
         &lt;Route path="*" element={&lt;NotFound />} />
       &lt;/Routes>
     &lt;/main>

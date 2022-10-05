@@ -1,11 +1,13 @@
 import React, { FC, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "components/Context";
+import { UserContext } from "utils/userContext";
 import Button from "components/Button";
 
 const Home: FC = () => {
   const navigate = useNavigate();
   const { user, users, setUser } = useContext(UserContext);
+
+  console.log("usersssss ", users);
 
   const handleUser = (userId: number) => {
     users?.filter((userFilter) => {
@@ -17,7 +19,7 @@ const Home: FC = () => {
 
   useEffect(() => {
     if (user?.id) {
-      navigate("/profil");
+      navigate(`/user/${user.id}`);
     }
   }, [user]);
 

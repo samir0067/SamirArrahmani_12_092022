@@ -95,11 +95,11 @@
  * type for CardFoodDetail component
  */
 type CardFoodDetailProps = {
-  value: string;
   property: string;
   unit: string;
   srcImg: string;
   altImg: string;
+  value?: number;
 };
 
 /**
@@ -119,8 +119,8 @@ export const CardFoodDetail: FC&lt;CardFoodDetailProps> = ({
 }: CardFoodDetailProps) => {
   return (
     &lt;div className="cardFoodDetail">
-      &lt;div className="cardFoodDetail_containing_img">
-        &lt;img src={srcImg} alt={altImg} className="cardFoodDetail_containing_img" />
+      &lt;div className="cardFoodDetail_container">
+        &lt;img src={srcImg} alt={altImg} className="cardFoodDetail_container_img" />
       &lt;/div>
       &lt;div className="cardFoodDetail_content">
         &lt;h4 className="cardFoodDetail_content_title">

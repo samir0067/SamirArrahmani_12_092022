@@ -5,7 +5,6 @@ import { UserMainData } from "utils/types";
  * Mock Data
  */
 const userMainData: string = process.env.PUBLIC_URL + "/mocks/userMainData.json";
-const getKarl: string = process.env.PUBLIC_URL + "/mocks/karlDovineauData.json";
 
 /**
  * Get users from api

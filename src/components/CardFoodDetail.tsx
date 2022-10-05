@@ -4,11 +4,11 @@ import React, { FC } from "react";
  * type for CardFoodDetail component
  */
 type CardFoodDetailProps = {
-  value: string;
   property: string;
   unit: string;
   srcImg: string;
   altImg: string;
+  value?: number;
 };
 
 /**
@@ -28,8 +28,8 @@ export const CardFoodDetail: FC<CardFoodDetailProps> = ({
 }: CardFoodDetailProps) => {
   return (
     <div className="cardFoodDetail">
-      <div className="cardFoodDetail_containing_img">
-        <img src={srcImg} alt={altImg} className="cardFoodDetail_containing_img" />
+      <div className="cardFoodDetail_container">
+        <img src={srcImg} alt={altImg} className="cardFoodDetail_container_img" />
       </div>
       <div className="cardFoodDetail_content">
         <h4 className="cardFoodDetail_content_title">
