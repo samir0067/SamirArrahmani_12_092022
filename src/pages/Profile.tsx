@@ -52,6 +52,7 @@ const Profile: FC = () => {
             property="Proteines"
             srcImg={chicken}
             altImg="icon chicken"
+            backgroundIcon="backgroundIconBlue"
           />
           <CardFoodDetail
             value={user?.keyData.carbohydrateCount}
@@ -59,6 +60,7 @@ const Profile: FC = () => {
             property="Glucides"
             srcImg={apple}
             altImg="icon apple"
+            backgroundIcon="backgroundIconYellow"
           />
           <CardFoodDetail
             value={user?.keyData.lipidCount}
@@ -66,6 +68,7 @@ const Profile: FC = () => {
             property="Lipides"
             srcImg={cheeseburger}
             altImg="icon cheeseburger"
+            backgroundIcon="backgroundIconPink"
           />
         </div>
       </div>

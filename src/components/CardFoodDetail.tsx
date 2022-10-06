@@ -9,15 +9,17 @@ type CardFoodDetailProps = {
   srcImg: string;
   altImg: string;
   value?: number;
+  backgroundIcon?: string;
 };
 
 /**
  * Functional component of the food type and its properties
- * @param { string } value measurements of properties
- * @param { string } property food property
- * @param { string } unit type of unit
+ * @param { string } property Food property
+ * @param { string } unit Type of unit
  * @param { string } srcImg Path pointing to the image
  * @param { string } altImg Description of the image
+ * @param { number } value Measurements of properties
+ * @param { string } backgroundIcon Background to the icon
  */
 export const CardFoodDetail: FC<CardFoodDetailProps> = ({
   value,
@@ -25,10 +27,11 @@ export const CardFoodDetail: FC<CardFoodDetailProps> = ({
   unit,
   srcImg,
   altImg,
+  backgroundIcon,
 }: CardFoodDetailProps) => {
   return (
     <div className="cardFoodDetail">
-      <div className="cardFoodDetail_container">
+      <div className={`cardFoodDetail_container ${backgroundIcon}`}>
         <img src={srcImg} alt={altImg} className="cardFoodDetail_container_img" />
       </div>
       <div className="cardFoodDetail_content">
@@ -40,4 +43,8 @@ export const CardFoodDetail: FC<CardFoodDetailProps> = ({
       </div>
     </div>
   );
+};
+
+CardFoodDetail.defaultProps = {
+  backgroundIcon: "backgroundIconRed",
 };

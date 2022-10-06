@@ -10,7 +10,6 @@
   border-radius: 5px;
   background-color: variables.$whiteGrey;
   &_container {
-    background-color: variables.$redOpacity;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,6 +35,22 @@
       color: variables.$greyText;
     }
   }
+}
+
+.backgroundIconRed {
+  background-color: variables.$redOpacity;
+}
+
+.backgroundIconBlue {
+  background-color: variables.$blueOpacity;
+}
+
+.backgroundIconYellow {
+  background-color: variables.$yellowOpacity;
+}
+
+.backgroundIconPink {
+  background-color: variables.$pinkOpacity;
 }
 
 
