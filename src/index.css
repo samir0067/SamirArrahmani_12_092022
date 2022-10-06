@@ -32,9 +32,11 @@
 }
 .cardFoodDetail {
   display: flex;
-  padding: 1rem;
+  align-items: center;
+  justify-content: center;
   width: 258px;
   height: 124px;
+  border-radius: 5px;
   background-color: #FBFBFB;
 }
 .cardFoodDetail_container {
@@ -46,6 +48,23 @@
   width: 60px;
   height: 60px;
 }
+.cardFoodDetail_content {
+  margin-left: 24px;
+}
+.cardFoodDetail_content h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #282D30;
+}
+.cardFoodDetail_content span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #74798C;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -146,15 +165,64 @@
   color: #FF0101;
 }
 
-.profile {
-  width: 100%;
-  height: 100%;
+.titleContent {
+  margin: 23px 90px 0 109px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  flex-direction: column;
+  align-items: start;
 }
-.profile_container_cardFood {
+.titleContent h1 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 24px;
+}
+.titleContent h1 span {
+  text-align: left;
+  color: #FF0101;
+}
+.titleContent h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+.profile {
+  margin: 32px 90px 0 109px;
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+.profile_activityContent {
+  grid-area: 1/1/2/4;
+  height: 320px;
+  border-radius: 5px;
+  background-color: #FBFBFB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+.profile_sessions {
+  grid-area: 2/1/3/2;
+  height: 263px;
+  border-radius: 5px;
+  background-color: #E60000;
+}
+.profile_performance {
+  grid-area: 2/2/3/3;
+  height: 263px;
+  border-radius: 5px;
+  background-color: #282D30;
+}
+.profile_score {
+  grid-area: 2/3/3/4;
+  height: 263px;
+  border-radius: 5px;
+  background-color: #FBFBFB;
+}
+.profile_infoContent {
+  grid-area: 1/4/3/5;
   display: flex;
   flex-direction: column;
   gap: 39px;

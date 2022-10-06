@@ -22,19 +22,23 @@ const Profile: FC = () => {
   const content = {
     title: `Bonjour `,
     subtitle: "Félicitation ! Vous avez explosé vos objectifs hier 👏",
-    message: "",
-    link: "",
   };
 
   return (
     <section>
-      <div className="profile">
+      <div className="titleContent">
         <h1>
           {content.title}
-          <span className="">{user?.userInfos.firstName}</span>
+          <span>{user?.userInfos.firstName}</span>
         </h1>
         <h2>{content.subtitle}</h2>
-        <div className="profile_container_cardFood">
+      </div>
+      <div className="profile">
+        <div className="profile_activityContent"></div>
+        <div className="profile_sessions"></div>
+        <div className="profile_performance"></div>
+        <div className="profile_score"></div>
+        <div className="profile_infoContent">
           <CardFoodDetail
             value={user?.keyData.calorieCount}
             unit="kCal"

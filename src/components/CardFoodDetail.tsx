@@ -32,11 +32,11 @@ export const CardFoodDetail: FC<CardFoodDetailProps> = ({
         <img src={srcImg} alt={altImg} className="cardFoodDetail_container_img" />
       </div>
       <div className="cardFoodDetail_content">
-        <h4 className="cardFoodDetail_content_title">
+        <h4>
           {value}
           {unit}
         </h4>
-        <p className="cardFoodDetail_content_text">{property}</p>
+        <span>{property}</span>
       </div>
     </div>
   );

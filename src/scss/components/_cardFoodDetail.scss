@@ -3,9 +3,11 @@
 
 .cardFoodDetail {
   display: flex;
-  padding: 1rem;
+  align-items: center;
+  justify-content: center;
   width: 258px;
   height: 124px;
+  border-radius: 5px;
   background-color: variables.$whiteGrey;
   &_container {
     background-color: variables.$redOpacity;
@@ -19,12 +21,19 @@
     }
   }
   &_content {
-
-    &_title {
-
+    margin-left: 24px;
+    & h4 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      color: variables.$greyBlack;
     }
-    &_text {
-
+    & span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      color: variables.$greyText;
     }
   }
 }

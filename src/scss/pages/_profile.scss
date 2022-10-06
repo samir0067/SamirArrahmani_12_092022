@@ -1,17 +1,64 @@
 @use "../utils/variables";
 
-.profile {
-  width: 100%;
-  height: 100%;
+.titleContent {
+  margin: 23px 90px 0 109px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  &_container {
-    &_cardFood {
-      display: flex;
-      flex-direction: column;
-      gap: 39px;
+  flex-direction: column;
+  align-items: start;
+  & h1 {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 24px;
+    & span {
+      text-align: left;
+      color: variables.$redText;
     }
+  }
+  & h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+}
+
+.profile {
+  margin: 32px 90px 0 109px;
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  &_activityContent {
+    grid-area: 1 / 1 / 2 / 4;
+    height: 320px;
+    border-radius: 5px;
+    background-color: variables.$whiteGrey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
+  }
+  &_sessions {
+    grid-area: 2 / 1 / 3 / 2;
+    height: 263px;
+    border-radius: 5px;
+    background-color: variables.$red;
+  }
+  &_performance {
+    grid-area: 2 / 2 / 3 / 3;
+    height: 263px;
+    border-radius: 5px;
+    background-color: variables.$greyBlack;
+  }
+  &_score {
+    grid-area: 2 / 3 / 3 / 4;
+    height: 263px;
+    border-radius: 5px;
+    background-color: variables.$whiteGrey;
+  }
+  &_infoContent {
+    grid-area: 1 / 4 / 3 / 5;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
   }
 }
