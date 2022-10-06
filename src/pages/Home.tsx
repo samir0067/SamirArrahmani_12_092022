@@ -10,7 +10,6 @@ const Home: FC = () => {
 
   const handleUser = (uid: number) => {
     getUserMainData(uid).then((userData) => {
-      console.log("userData", userData);
       setUser(userData);
     });
   };

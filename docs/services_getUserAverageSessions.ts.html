@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> services/getUserMainData.ts</title>
+  <title> services/getUserAverageSessions.ts</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>services/getUserMainData.ts</h1>
+                    <h1>services/getUserAverageSessions.ts</h1>
                 </header>
                 
 
@@ -90,19 +90,19 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import axios from "axios";
-import { UserMainData } from "utils/types";
+import { UserActivity, UserAverageSessions } from "utils/types";
 
 /**
  * Mock Data
  */
-// const usersMainData: string = process.env.PUBLIC_URL.concat("/mocks/usersMainData.json");
+// const usersAverageSessions: string = process.env.PUBLIC_URL.concat("/mocks/usersAverageSessions.json");
 
 /**
- * Get users from api
+ * Get the user's average sessions in the api
  */
-const getUserMainData = (uid: number): Promise&lt;UserMainData> => {
+const getUserAverageSessions = (uid?: string): Promise&lt;UserAverageSessions> => {
   return axios
-    .get(`${process.env.REACT_APP_API}/user/${uid}`)
+    .get(`${process.env.REACT_APP_API}/user/${uid}/average-sessions`)
     .then(({ data }) => {
       return data;
     })
@@ -111,7 +111,7 @@ const getUserMainData = (uid: number): Promise&lt;UserMainData> => {
     });
 };
 
-export default getUserMainData;
+export default getUserAverageSessions;
 </code></pre>
         </article>
     </section>

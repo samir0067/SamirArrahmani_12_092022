@@ -6,11 +6,32 @@ import energy from "assets/energy.svg";
 import chicken from "assets/chicken.svg";
 import apple from "assets/apple.svg";
 import cheeseburger from "assets/cheeseburger.svg";
+import getUserActivity from "services/getUserActivity";
+import getUserAverageSessions from "services/getUserAverageSessions";
+import getUserPerformance from "services/getUserPerformance";
 
 const Profile: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   console.log("User context ==>", user);
+
+  useEffect(() => {
+    getUserActivity(user?.data.id).then((activityData) => {
+      console.log("activityData ==>", activityData);
+    });
+  }, [user]);
+
+  useEffect(() => {
+    getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
+      console.log("averageSessionsData ==>", averageSessionsData);
+    });
+  }, [user]);
+
+  useEffect(() => {
+    getUserPerformance(user?.data.id).then((performanceData) => {
+      console.log("performanceData ==>", performanceData);
+    });
+  }, [user]);
 
   useEffect(() => {
     if (user === undefined) {
