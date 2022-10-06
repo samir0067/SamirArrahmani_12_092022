@@ -16,26 +16,18 @@ const Profile: FC = () => {
   console.log("User context ==>", user);
 
   useEffect(() => {
-    getUserActivity(user?.data.id).then((activityData) => {
-      console.log("activityData ==>", activityData);
-    });
-  }, [user]);
-
-  useEffect(() => {
-    getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
-      console.log("averageSessionsData ==>", averageSessionsData);
-    });
-  }, [user]);
-
-  useEffect(() => {
-    getUserPerformance(user?.data.id).then((performanceData) => {
-      console.log("performanceData ==>", performanceData);
-    });
-  }, [user]);
-
-  useEffect(() => {
     if (user === undefined) {
       navigate("/");
+    } else {
+      getUserActivity(user?.data.id).then((activityData) => {
+        console.log("activityData ==>", activityData);
+      });
+      getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
+        console.log("averageSessionsData ==>", averageSessionsData);
+      });
+      getUserPerformance(user?.data.id).then((performanceData) => {
+        console.log("performanceData ==>", performanceData);
+      });
     }
   }, [user]);
 
