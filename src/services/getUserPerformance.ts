@@ -1,5 +1,5 @@
 import axios from "axios";
-import { UserActivity, UserAverageSessions, UserPerformance } from "utils/types";
+import { UserPerformance } from "utils/types";
 
 /**
  * Mock Data
@@ -15,8 +15,8 @@ const getUserPerformance = (uid?: string): Promise<UserPerformance> => {
     .then(({ data }) => {
       return data;
     })
-    .catch((error) => {
-      throw error.response;
+    .catch(({ response }) => {
+      throw new Error(response);
     });
 };
 

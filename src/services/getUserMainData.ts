@@ -15,8 +15,8 @@ const getUserMainData = (uid: number): Promise<UserMainData> => {
     .then(({ data }) => {
       return data;
     })
-    .catch((error) => {
-      throw error.response;
+    .catch(({ response }) => {
+      throw new Error(response);
     });
 };
 
