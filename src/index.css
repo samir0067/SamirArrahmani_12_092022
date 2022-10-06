@@ -65,6 +65,12 @@
   color: #74798C;
 }
 
+@media (max-width: 425px) {
+  .cardFoodDetail {
+    width: 218px;
+    height: 84px;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -119,7 +125,6 @@
   width: 117px;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   color: white;
   background: #020203;
@@ -127,6 +132,7 @@
 }
 .asideBar_ul {
   padding-left: 0;
+  margin-top: 26vh;
 }
 .asideBar_ul_li {
   margin-bottom: 20px;
@@ -143,9 +149,15 @@
   writing-mode: vertical-lr;
 }
 
+@media (max-width: 1024px) {
+  .asideBar {
+    height: 152vh;
+  }
+}
 @media (max-width: 768px) {
   .asideBar {
     width: 70px;
+    height: 200vh;
   }
   .logoAsideBar {
     height: 50px;
@@ -193,8 +205,8 @@
   display: grid;
   grid-row-gap: 30px;
   grid-column-gap: 30px;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 .profile_activityContent {
   grid-area: 1/1/2/4;
@@ -228,6 +240,69 @@
   gap: 39px;
 }
 
+@media (max-width: 1024px) {
+  .profile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .profile_infoContent {
+    grid-area: 1/1/2/4;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .profile_activityContent {
+    grid-area: 2/1/3/4;
+  }
+  .profile_sessions {
+    grid-area: 3/1/4/2;
+  }
+  .profile_performance {
+    grid-area: 3/2/4/3;
+  }
+  .profile_score {
+    grid-area: 3/3/4/4;
+  }
+}
+@media (max-width: 768px) {
+  .titleContent {
+    margin: 23px 30px 0 30px;
+  }
+  .profile {
+    margin: 32px 30px 0 30px;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+    grid-template-columns: 1fr;
+  }
+  .profile_infoContent {
+    grid-area: 1/1/2/2;
+  }
+  .profile_activityContent {
+    grid-area: 2/1/3/2;
+  }
+  .profile_sessions {
+    grid-area: 3/1/4/2;
+  }
+  .profile_performance {
+    grid-area: 4/1/5/2;
+  }
+  .profile_score {
+    grid-area: 5/1/6/2;
+  }
+}
+@media (max-width: 425px) {
+  .titleContent {
+    margin: 23px 15px 0 15px;
+  }
+  .titleContent h1 {
+    font-size: 38px;
+  }
+  .titleContent h2 {
+    font-size: 15px;
+  }
+  .profile {
+    margin: 32px 15px 0 15px;
+  }
+}
 .setting {
   width: 100%;
   height: 100%;

@@ -6,13 +6,13 @@
   width: 117px;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   color: white;
   background: variables.$black;
   z-index: variables.$middleZIndex;
   &_ul {
     padding-left: 0;
+    margin-top: 26vh;
     &_li {
       margin-bottom: 20px;
     }
@@ -31,9 +31,16 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .asideBar {
+    height: 152vh;
+  }
+}
+
 @media (max-width: 768px) {
   .asideBar {
     width: 70px;
+    height: 200vh;
   }
   .logoAsideBar {
     height: 50px;
