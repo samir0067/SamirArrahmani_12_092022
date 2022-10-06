@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> services/getUserMainData.ts</title>
+  <title> services/getUserActivity.ts</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>services/getUserMainData.ts</h1>
+                    <h1>services/getUserActivity.ts</h1>
                 </header>
                 
 
@@ -90,28 +90,28 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import axios from "axios";
-import { UserMainData } from "utils/types";
+import { UserActivity } from "utils/types";
 
 /**
  * Mock Data
  */
-// const usersMainData: string = process.env.PUBLIC_URL.concat("/mocks/usersMainData.json");
+const usersActivity: string = process.env.PUBLIC_URL.concat("/mocks/usersActivity.json");
 
 /**
- * Get users from api
+ * Get the user's activity in the api
  */
-const getUserMainData = (uid: number): Promise&lt;UserMainData> => {
+const getUserActivity = (): Promise&lt;UserActivity> => {
   return axios
-    .get(`${process.env.REACT_APP_API}/user/${uid}`)
-    .then(({ data }) => {
-      return data;
+    .get(`${usersActivity}`)
+    .then((response) => {
+      return response.data;
     })
     .catch((error) => {
       throw error.response;
     });
 };
 
-export default getUserMainData;
+export default getUserActivity;
 </code></pre>
         </article>
     </section>

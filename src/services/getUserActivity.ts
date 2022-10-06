@@ -4,7 +4,7 @@ import { UserActivity } from "utils/types";
 /**
  * Mock Data
  */
-const usersActivity: string = process.env.PUBLIC_URL + "/mocks/usersActivity.json";
+const usersActivity: string = process.env.PUBLIC_URL.concat("/mocks/usersActivity.json");
 
 /**
  * Get the user's activity in the api

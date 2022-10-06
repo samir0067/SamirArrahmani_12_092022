@@ -2,7 +2,7 @@ import React, { FC, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "assets/logo.svg";
 import Button from "components/Button";
-import { UserContext } from "utils/userContext";
+import { UserContext } from "utils/context/userContext";
 
 /**
  * Page navigation system, with removal of the global state when returning to the home page
@@ -31,8 +31,8 @@ const NavBar: FC = () => {
           <Button
             isLink
             title="Profil"
-            className={location.pathname === `/user/${user?.id}` ? "active" : ""}
-            onClick={() => navigate(`/user/${user?.id}`)}
+            className={location.pathname === `/user/${user?.data.id}` ? "active" : ""}
+            onClick={() => navigate(`/user/${user?.data.id}`)}
           />
           <Button
             isLink

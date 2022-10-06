@@ -1,22 +1,23 @@
 export type User = {
-  users?: UserMainData[];
   user?: UserMainData;
   setUser: (u: UserMainData | undefined) => void;
 };
 
 export type UserMainData = {
-  id: number;
-  userInfos: {
-    firstName: string;
-    lastName: string;
-    age: number;
-  };
-  todayScore: number;
-  keyData: {
-    calorieCount: number;
-    proteinCount: number;
-    carbohydrateCount: number;
-    lipidCount: number;
+  data: {
+    id: string;
+    userInfos: {
+      firstName: string;
+      lastName: string;
+      age: number;
+    };
+    todayScore: number;
+    keyData: {
+      calorieCount: number;
+      proteinCount: number;
+      carbohydrateCount: number;
+      lipidCount: number;
+    };
   };
 };
 

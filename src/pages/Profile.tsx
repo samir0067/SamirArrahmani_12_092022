@@ -1,5 +1,5 @@
 import React, { FC, useContext, useEffect } from "react";
-import { UserContext } from "utils/userContext";
+import { UserContext } from "utils/context/userContext";
 import { useNavigate } from "react-router-dom";
 import { CardFoodDetail } from "components/CardFoodDetail";
 import energy from "assets/energy.svg";
@@ -10,8 +10,7 @@ import cheeseburger from "assets/cheeseburger.svg";
 const Profile: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-
-  console.log("User context ==>", user?.id);
+  console.log("User context ==>", user);
 
   useEffect(() => {
     if (user === undefined) {
@@ -29,7 +28,7 @@ const Profile: FC = () => {
       <div className="titleContent">
         <h1>
           {content.title}
-          <span>{user?.userInfos.firstName}</span>
+          <span>{user?.data.userInfos.firstName}</span>
         </h1>
         <h2>{content.subtitle}</h2>
       </div>
@@ -40,14 +39,14 @@ const Profile: FC = () => {
         <div className="profile_score"></div>
         <div className="profile_infoContent">
           <CardFoodDetail
-            value={user?.keyData.calorieCount}
+            value={user?.data.keyData.calorieCount}
             unit="kCal"
             property="Calories"
             srcImg={energy}
             altImg="icon energy"
           />
           <CardFoodDetail
-            value={user?.keyData.proteinCount}
+            value={user?.data.keyData.proteinCount}
             unit="g"
             property="Proteines"
             srcImg={chicken}
@@ -55,7 +54,7 @@ const Profile: FC = () => {
             backgroundIcon="backgroundIconBlue"
           />
           <CardFoodDetail
-            value={user?.keyData.carbohydrateCount}
+            value={user?.data.keyData.carbohydrateCount}
             unit="g"
             property="Glucides"
             srcImg={apple}
@@ -63,7 +62,7 @@ const Profile: FC = () => {
             backgroundIcon="backgroundIconYellow"
           />
           <CardFoodDetail
-            value={user?.keyData.lipidCount}
+            value={user?.data.keyData.lipidCount}
             unit="g"
             property="Lipides"
             srcImg={cheeseburger}

@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#AsideBar">AsideBar</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CardFoodDetail">CardFoodDetail</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#NavBar">NavBar</a></li><li><a href="global.html#Routing">Routing</a></li><li><a href="global.html#UserContext">UserContext</a></li><li><a href="global.html#userMainData">userMainData</a></li><li><a href="global.html#UserProvider">UserProvider</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#AsideBar">AsideBar</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CardFoodDetail">CardFoodDetail</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#NavBar">NavBar</a></li><li><a href="global.html#Routing">Routing</a></li><li><a href="global.html#UserContext">UserContext</a></li><li><a href="global.html#UserProvider">UserProvider</a></li><li><a href="global.html#usersActivity">usersActivity</a></li></ul></div>
                 
             </nav>
         </div>
@@ -100,15 +100,17 @@ type CardFoodDetailProps = {
   srcImg: string;
   altImg: string;
   value?: number;
+  backgroundIcon?: string;
 };
 
 /**
  * Functional component of the food type and its properties
- * @param { string } value measurements of properties
- * @param { string } property food property
- * @param { string } unit type of unit
+ * @param { string } property Food property
+ * @param { string } unit Type of unit
  * @param { string } srcImg Path pointing to the image
  * @param { string } altImg Description of the image
+ * @param { number } value Measurements of properties
+ * @param { string } backgroundIcon Background to the icon
  */
 export const CardFoodDetail: FC&lt;CardFoodDetailProps> = ({
   value,
@@ -116,21 +118,26 @@ export const CardFoodDetail: FC&lt;CardFoodDetailProps> = ({
   unit,
   srcImg,
   altImg,
+  backgroundIcon,
 }: CardFoodDetailProps) => {
   return (
     &lt;div className="cardFoodDetail">
-      &lt;div className="cardFoodDetail_container">
+      &lt;div className={`cardFoodDetail_container ${backgroundIcon}`}>
         &lt;img src={srcImg} alt={altImg} className="cardFoodDetail_container_img" />
       &lt;/div>
       &lt;div className="cardFoodDetail_content">
-        &lt;h4 className="cardFoodDetail_content_title">
+        &lt;h4>
           {value}
           {unit}
         &lt;/h4>
-        &lt;p className="cardFoodDetail_content_text">{property}&lt;/p>
+        &lt;span>{property}&lt;/span>
       &lt;/div>
     &lt;/div>
   );
+};
+
+CardFoodDetail.defaultProps = {
+  backgroundIcon: "backgroundIconRed",
 };
 </code></pre>
         </article>

@@ -1,10 +1,11 @@
 import React, { FC, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "utils/userContext";
+import { UserContext } from "utils/context/userContext";
 
 const Setting: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
+  console.log("User context setting ==>", user);
 
   useEffect(() => {
     if (user === undefined) {

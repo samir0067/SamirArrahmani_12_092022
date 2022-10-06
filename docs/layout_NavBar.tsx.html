@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#AsideBar">AsideBar</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CardFoodDetail">CardFoodDetail</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#NavBar">NavBar</a></li><li><a href="global.html#Routing">Routing</a></li><li><a href="global.html#UserContext">UserContext</a></li><li><a href="global.html#userMainData">userMainData</a></li><li><a href="global.html#UserProvider">UserProvider</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#AsideBar">AsideBar</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CardFoodDetail">CardFoodDetail</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#NavBar">NavBar</a></li><li><a href="global.html#Routing">Routing</a></li><li><a href="global.html#UserContext">UserContext</a></li><li><a href="global.html#UserProvider">UserProvider</a></li><li><a href="global.html#usersActivity">usersActivity</a></li></ul></div>
                 
             </nav>
         </div>
@@ -93,7 +93,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "assets/logo.svg";
 import Button from "components/Button";
-import { UserContext } from "utils/userContext";
+import { UserContext } from "utils/context/userContext";
 
 /**
  * Page navigation system, with removal of the global state when returning to the home page
@@ -122,8 +122,8 @@ const NavBar: FC = () => {
           &lt;Button
             isLink
             title="Profil"
-            className={location.pathname === `/user/${user?.id}` ? "active" : ""}
-            onClick={() => navigate(`/user/${user?.id}`)}
+            className={location.pathname === `/user/${user?.data.id}` ? "active" : ""}
+            onClick={() => navigate(`/user/${user?.data.id}`)}
           />
           &lt;Button
             isLink

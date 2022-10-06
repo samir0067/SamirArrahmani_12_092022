@@ -1,25 +1,23 @@
 import React, { FC, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "utils/userContext";
+import { UserContext } from "utils/context/userContext";
 import Button from "components/Button";
+import getUserMainData from "services/getUserMainData";
 
 const Home: FC = () => {
   const navigate = useNavigate();
-  const { user, users, setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
-  console.log("usersssss ", users);
-
-  const handleUser = (userId: number) => {
-    users?.filter((userFilter) => {
-      if (userFilter.id === userId) {
-        setUser(userFilter);
-      }
+  const handleUser = (uid: number) => {
+    getUserMainData(uid).then((userData) => {
+      console.log("userData", userData);
+      setUser(userData);
     });
   };
 
   useEffect(() => {
-    if (user?.id) {
-      navigate(`/user/${user.id}`);
+    if (user?.data.id) {
+      navigate(`/user/${user.data.id}`);
     }
   }, [user]);
 

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> services/getUserMainData.ts</title>
+  <title> utils/context/UserProvider.tsx</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>services/getUserMainData.ts</h1>
+                    <h1>utils/context/UserProvider.tsx</h1>
                 </header>
                 
 
@@ -89,29 +89,20 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import axios from "axios";
+            <pre class="prettyprint source linenums"><code>import type { ReactNode } from "react";
+import React, { useState } from "react";
 import { UserMainData } from "utils/types";
+import { UserContext } from "utils/context/userContext";
 
 /**
- * Mock Data
+ * use of context to wrap all child components
+ * @param { ReactNode } children
  */
-// const usersMainData: string = process.env.PUBLIC_URL.concat("/mocks/usersMainData.json");
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState&lt;UserMainData | undefined>(undefined);
 
-/**
- * Get users from api
- */
-const getUserMainData = (uid: number): Promise&lt;UserMainData> => {
-  return axios
-    .get(`${process.env.REACT_APP_API}/user/${uid}`)
-    .then(({ data }) => {
-      return data;
-    })
-    .catch((error) => {
-      throw error.response;
-    });
+  return &lt;UserContext.Provider value={{ user, setUser }}>{children}&lt;/UserContext.Provider>;
 };
-
-export default getUserMainData;
 </code></pre>
         </article>
     </section>
