@@ -1,5 +1,5 @@
 import axios from "axios";
-import { UserAverageSessions } from "utils/types";
+import { UserSessionsAverage } from "utils/types";
 
 /**
  * Mock Data
@@ -9,7 +9,7 @@ import { UserAverageSessions } from "utils/types";
 /**
  * Get the user's average sessions in the api
  */
-const getUserAverageSessions = (uid?: string): Promise<UserAverageSessions> => {
+const getUserAverageSessions = (uid?: string): Promise<UserSessionsAverage> => {
   return axios
     .get(`${process.env.REACT_APP_API}/user/${uid}/average-sessions`)
     .then(({ data }) => {
