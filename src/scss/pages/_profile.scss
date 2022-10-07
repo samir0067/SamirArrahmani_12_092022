@@ -32,8 +32,8 @@
   grid-template-columns: repeat(3, 1fr);
   &_activityContent {
     grid-area: 1 / 1 / 2 / 4;
-    height: 320px;
     border-radius: 5px;
+    padding: 23px 23px;
     background-color: variables.$whiteGrey;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
   }
