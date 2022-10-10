@@ -5,10 +5,17 @@ import { CustomTooltip } from "components/CustomTooltip";
 import ovalBlack from "assets/ovalBlack.svg";
 import ovalRed from "assets/ovalRed.svg";
 
+/**
+ * Type for Activity component
+ */
 type ActivityProps = {
   sessions: SessionsActivity[];
 };
 
+/**
+ *  Functional component that returns a graph with the values of the activities.
+ * @param { SessionsActivity[] } sessions Data from activity sessions
+ */
 const Activity: FC<ActivityProps> = ({ sessions }: ActivityProps) => {
   return (
     <Fragment>
