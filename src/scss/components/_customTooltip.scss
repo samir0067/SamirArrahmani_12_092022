@@ -1,0 +1,13 @@
+@use "../utils/variables";
+
+.customTooltip {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 7px;
+  color: white;
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 17px;
+  background-color: variables.$red;
+}

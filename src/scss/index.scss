@@ -2,6 +2,8 @@
 @use "utils/variables";
 
 // Components
+@use "components/activity";
+@use "components/customTooltip";
 @use "components/button";
 @use "components/cardFoodDetail";
 

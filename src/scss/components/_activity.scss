@@ -1,0 +1,25 @@
+@use "../utils/variables";
+
+.headerActivity {
+  & h4 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    color: variables.$blackText;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &_legend {
+    display: flex;
+    gap: 30px;
+    & p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      & img {
+        margin-right: 12px;
+      }
+    }
+  }
+}

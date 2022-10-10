@@ -21,21 +21,32 @@ export type UserMainData = {
   };
 };
 
-export type UserActivity = {
-  userId: number;
-  sessions: {
-    day: string;
-    kilogram: number;
-    calories: number;
-  }[];
+export type SessionsActivity = {
+  day: string;
+  kilogram: number;
+  calories: number;
 };
 
-export type UserAverageSessions = {
+export type SessionsAverage = {
+  day: number;
+  sessionLength: number;
+};
+
+export type DataPerformance = {
+  value: number;
+  kind: number;
+};
+
+export type UserActivity = {
+  data: {
+    userId?: string;
+    sessions?: SessionsActivity[];
+  };
+};
+
+export type UserSessionsAverage = {
   userId: number;
-  sessions: {
-    day: number;
-    sessionLength: number;
-  }[];
+  sessions: SessionsAverage[];
 };
 
 export type UserPerformance = {
@@ -48,8 +59,5 @@ export type UserPerformance = {
     5: "speed";
     6: "intensity";
   };
-  data: {
-    value: number;
-    kind: number;
-  }[];
+  data: DataPerformance[];
 };

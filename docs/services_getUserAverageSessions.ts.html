@@ -90,7 +90,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import axios from "axios";
-import { UserActivity, UserAverageSessions } from "utils/types";
+import { UserSessionsAverage } from "utils/types";
 
 /**
  * Mock Data
@@ -100,14 +100,14 @@ import { UserActivity, UserAverageSessions } from "utils/types";
 /**
  * Get the user's average sessions in the api
  */
-const getUserAverageSessions = (uid?: string): Promise&lt;UserAverageSessions> => {
+const getUserAverageSessions = (uid?: string): Promise&lt;UserSessionsAverage> => {
   return axios
     .get(`${process.env.REACT_APP_API}/user/${uid}/average-sessions`)
     .then(({ data }) => {
       return data;
     })
-    .catch((error) => {
-      throw error.response;
+    .catch(({ response }) => {
+      throw new Error(response);
     });
 };
 

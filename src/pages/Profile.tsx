@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import { UserContext } from "utils/context/userContext";
 import { useNavigate } from "react-router-dom";
 import { CardFoodDetail } from "components/CardFoodDetail";
@@ -7,27 +7,29 @@ import chicken from "assets/chicken.svg";
 import apple from "assets/apple.svg";
 import cheeseburger from "assets/cheeseburger.svg";
 import getUserActivity from "services/getUserActivity";
-import getUserAverageSessions from "services/getUserAverageSessions";
-import getUserPerformance from "services/getUserPerformance";
+// import getUserAverageSessions from "services/getUserAverageSessions";
+// import getUserPerformance from "services/getUserPerformance";
+import Activity from "components/Activity";
+import { SessionsActivity, UserActivity } from "utils/types";
 
 const Profile: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  console.log("User context ==>", user);
+  const [activity, setActivity] = useState<SessionsActivity[]>();
 
   useEffect(() => {
     if (user === undefined) {
       navigate("/");
     } else {
       getUserActivity(user?.data.id).then((activityData) => {
-        console.log("activityData ==>", activityData);
+        setActivity(activityData.data.sessions);
       });
-      getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
-        console.log("averageSessionsData ==>", averageSessionsData);
-      });
-      getUserPerformance(user?.data.id).then((performanceData) => {
-        console.log("performanceData ==>", performanceData);
-      });
+      // getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
+      //   console.log("averageSessionsData ==>", averageSessionsData);
+      // });
+      // getUserPerformance(user?.data.id).then((performanceData) => {
+      //   console.log("performanceData ==>", performanceData);
+      // });
     }
   }, [user]);
 
@@ -46,7 +48,7 @@ const Profile: FC = () => {
         <h2>{content.subtitle}</h2>
       </div>
       <div className="profile">
-        <div className="profile_activityContent"></div>
+        <div className="profile_activityContent">{activity && <Activity sessions={activity} />}</div>
         <div className="profile_sessions"></div>
         <div className="profile_performance"></div>
         <div className="profile_score"></div>

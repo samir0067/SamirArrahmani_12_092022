@@ -106,8 +106,8 @@ const getUserActivity = (uid?: string): Promise&lt;UserActivity> => {
     .then(({ data }) => {
       return data;
     })
-    .catch((error) => {
-      throw error.response;
+    .catch(({ response }) => {
+      throw new Error(response);
     });
 };
 
