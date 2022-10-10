@@ -36,7 +36,7 @@ const Activity: FC<ActivityProps> = ({ sessions }: ActivityProps) => {
             orientation="right"
             domain={["dataMin - 5", "dataMax + 1"]}
           />
-          <YAxis yAxisId={2} dataKey="calories" domain={["auto"]} />
+          <YAxis hide yAxisId={2} dataKey="calories" domain={["auto"]} />
           <XAxis tickLine={false} interval={0} />
           <Tooltip content={<CustomTooltip />} />
           <Bar
