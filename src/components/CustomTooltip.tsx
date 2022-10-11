@@ -12,11 +12,10 @@ export const CustomTooltip: FC<TooltipProps<ValueType, NameType>> = ({
   payload,
 }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
-    console.log("payload ==>", payload);
     return (
-      <div className={`customTooltip`}>
-        <p>{`${payload[0].value}${payload[0].unit}`}</p>
-        <p>{`${payload[1].value}${payload[1].unit}`}</p>
+      <div className={`customTooltip ${payload[0].unit === " min" ? "bgColorWhite" : ""}`}>
+        {payload[0] ? <p>{`${payload[0].value}${payload[0].unit}`}</p> : null}
+        {payload[1] ? <p>{`${payload[1].value}${payload[1].unit}`}</p> : null}
       </div>
     );
   }
