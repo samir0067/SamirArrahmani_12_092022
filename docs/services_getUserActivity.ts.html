@@ -101,7 +101,7 @@ const getUserActivity = (uid?: number): Promise&lt;UserActivity> => {
     .get(`${process.env.REACT_APP_API}/user/${uid}/activity`)
     .then(({ data }) => {
       if (process.env.REACT_APP_API_SOURCE === "mocks") {
-        const dataFiltered = userActivity.filter(function (e: any) {
+        const dataFiltered = userActivity.filter(function (e) {
           return e.data.userId === uid;
         });
         console.log("activity mock", dataFiltered[0]);
