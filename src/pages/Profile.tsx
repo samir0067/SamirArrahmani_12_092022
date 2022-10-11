@@ -7,15 +7,17 @@ import chicken from "assets/chicken.svg";
 import apple from "assets/apple.svg";
 import cheeseburger from "assets/cheeseburger.svg";
 import getUserActivity from "services/getUserActivity";
-// import getUserAverageSessions from "services/getUserAverageSessions";
+import getUserAverageSessions from "services/getUserAverageSessions";
 // import getUserPerformance from "services/getUserPerformance";
 import Activity from "components/Activity";
-import { SessionsActivity, UserActivity } from "utils/types";
+import { SessionsActivity, SessionsAverage } from "utils/types";
+import Sessions from "components/Sessions";
 
 const Profile: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [activity, setActivity] = useState<SessionsActivity[]>();
+  const [averageSessions, setAverageSessions] = useState<SessionsAverage[]>();
 
   useEffect(() => {
     if (user === undefined) {
@@ -24,9 +26,9 @@ const Profile: FC = () => {
       getUserActivity(user?.data.id).then((activityData) => {
         setActivity(activityData.data.sessions);
       });
-      // getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
-      //   console.log("averageSessionsData ==>", averageSessionsData);
-      // });
+      getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
+        setAverageSessions(averageSessionsData.data.sessions);
+      });
       // getUserPerformance(user?.data.id).then((performanceData) => {
       //   console.log("performanceData ==>", performanceData);
       // });
@@ -49,7 +51,7 @@ const Profile: FC = () => {
       </div>
       <div className="profile">
         <div className="profile_activityContent">{activity && <Activity sessions={activity} />}</div>
-        <div className="profile_sessions"></div>
+        <div className="profile_sessions">{averageSessions && <Sessions averageSessions={averageSessions} />}</div>
         <div className="profile_performance"></div>
         <div className="profile_score"></div>
         <div className="profile_infoContent">

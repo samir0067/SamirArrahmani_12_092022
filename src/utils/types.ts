@@ -45,8 +45,10 @@ export type UserActivity = {
 };
 
 export type UserSessionsAverage = {
-  userId: number;
-  sessions: SessionsAverage[];
+  data: {
+    userId: number;
+    sessions: SessionsAverage[];
+  };
 };
 
 export type UserPerformance = {
