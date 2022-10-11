@@ -1,19 +1,24 @@
 import axios from "axios";
 import { UserSessionsAverage } from "utils/types";
+import { userAverageSessions } from "utils/mocks/userAverageSessions";
 
 /**
- * Mock Data
+ * Get the user's average sessions in the api or mock
  */
-// const usersAverageSessions: string = process.env.PUBLIC_URL.concat("/mocks/usersAverageSessions.json");
-
-/**
- * Get the user's average sessions in the api
- */
-const getUserAverageSessions = (uid?: string): Promise<UserSessionsAverage> => {
+const getUserAverageSessions = (uid?: number | undefined): Promise<UserSessionsAverage> => {
   return axios
     .get(`${process.env.REACT_APP_API}/user/${uid}/average-sessions`)
     .then(({ data }) => {
-      return data;
+      if (process.env.REACT_APP_API_SOURCE === "mocks") {
+        const dataFiltered = userAverageSessions.filter(function (e) {
+          return e.data.userId === uid;
+        });
+        console.log("average-sessions mock", dataFiltered[0]);
+        return dataFiltered[0];
+      } else {
+        console.log("average-sessions api", data);
+        return data;
+      }
     })
     .catch(({ response }) => {
       throw new Error(response);

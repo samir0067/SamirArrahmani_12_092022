@@ -100,7 +100,7 @@ import { UserSessionsAverage } from "utils/types";
 /**
  * Get the user's average sessions in the api
  */
-const getUserAverageSessions = (uid?: string): Promise&lt;UserSessionsAverage> => {
+const getUserAverageSessions = (uid?: number | undefined): Promise&lt;UserSessionsAverage> => {
   return axios
     .get(`${process.env.REACT_APP_API}/user/${uid}/average-sessions`)
     .then(({ data }) => {

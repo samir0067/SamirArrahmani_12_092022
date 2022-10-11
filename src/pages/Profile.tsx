@@ -23,7 +23,7 @@ const Profile: FC = () => {
     if (user === undefined) {
       navigate("/");
     } else {
-      getUserActivity(user?.data.id).then((activityData) => {
+      getUserActivity(user.data.id).then((activityData) => {
         setActivity(activityData.data.sessions);
       });
       getUserAverageSessions(user?.data.id).then((averageSessionsData) => {

@@ -5,7 +5,7 @@ import { NameType, ValueType } from "recharts/types/component/DefaultTooltipCont
 /**
  * Customized tooltip
  * @param { boolean } active define if active or not
- * @param { <ValueType, NameType>[] } payload return the information
+ * @param { ValueType | NameType  } payload return the information
  */
 export const CustomTooltip: FC<TooltipProps<ValueType, NameType>> = ({
   active,

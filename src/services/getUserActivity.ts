@@ -1,22 +1,28 @@
 import axios from "axios";
 import { UserActivity } from "utils/types";
+import { userActivity } from "utils/mocks/userActivity";
 
 /**
- * Mock Data
+ * Get the user's activity in the api or mock
  */
-// const usersActivity: string = process.env.PUBLIC_URL.concat("/mocks/usersActivity.json");
-
-/**
- * Get the user's activity in the api
- */
-const getUserActivity = (uid?: string): Promise<UserActivity> => {
+const getUserActivity = (uid?: number): Promise<UserActivity> => {
   return axios
     .get(`${process.env.REACT_APP_API}/user/${uid}/activity`)
     .then(({ data }) => {
-      return data;
+      if (process.env.REACT_APP_API_SOURCE === "mocks") {
+        const dataFiltered = userActivity.filter(function (e) {
+          return e.data.userId === uid;
+        });
+        console.log("activity mock", dataFiltered[0]);
+        return dataFiltered[0];
+      } else {
+        console.log("activity api", data);
+        return data;
+      }
     })
-    .catch(({ response }) => {
-      throw new Error(response);
+    .catch((error) => {
+      console.log("error response", error);
+      throw new Error(error);
     });
 };
 
