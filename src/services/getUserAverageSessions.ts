@@ -13,15 +13,15 @@ const getUserAverageSessions = (uid?: number | undefined): Promise<UserSessionsA
         const dataFiltered = userAverageSessions.filter(function (e) {
           return e.data.userId === uid;
         });
-        console.log("average-sessions mock", dataFiltered[0]);
+        // console.log("average-sessions mock", dataFiltered[0]);
         return dataFiltered[0];
       } else {
-        console.log("average-sessions api", data);
+        // console.log("average-sessions api", data);
         return data;
       }
     })
-    .catch(({ response }) => {
-      throw new Error(response);
+    .catch((error) => {
+      throw new Error(error);
     });
 };
 

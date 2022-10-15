@@ -13,15 +13,14 @@ const getUserActivity = (uid?: number): Promise<UserActivity> => {
         const dataFiltered = userActivity.filter(function (e) {
           return e.data.userId === uid;
         });
-        console.log("activity mock", dataFiltered[0]);
+        // console.log("activity mock", dataFiltered[0]);
         return dataFiltered[0];
       } else {
-        console.log("activity api", data);
+        // console.log("activity api", data);
         return data;
       }
     })
     .catch((error) => {
-      console.log("error response", error);
       throw new Error(error);
     });
 };
