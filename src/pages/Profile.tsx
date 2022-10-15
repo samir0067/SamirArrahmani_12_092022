@@ -8,16 +8,18 @@ import apple from "assets/apple.svg";
 import cheeseburger from "assets/cheeseburger.svg";
 import getUserActivity from "services/getUserActivity";
 import getUserAverageSessions from "services/getUserAverageSessions";
-// import getUserPerformance from "services/getUserPerformance";
+import getUserPerformance from "services/getUserPerformance";
 import Activity from "components/Activity";
-import { SessionsActivity, SessionsAverage } from "utils/types";
+import { SessionsActivity, SessionsAverage, SessionsPerformance } from "utils/types";
 import Sessions from "components/Sessions";
+import Performance from "components/Performance";
 
 const Profile: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [activity, setActivity] = useState<SessionsActivity[]>();
   const [averageSessions, setAverageSessions] = useState<SessionsAverage[]>();
+  const [performance, setPerformance] = useState<SessionsPerformance[]>();
 
   useEffect(() => {
     if (user === undefined) {
@@ -29,9 +31,9 @@ const Profile: FC = () => {
       getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
         setAverageSessions(averageSessionsData.data.sessions);
       });
-      // getUserPerformance(user?.data.id).then((performanceData) => {
-      //   console.log("performanceData ==>", performanceData);
-      // });
+      getUserPerformance(user?.data.id).then((performanceData) => {
+        setPerformance(performanceData.data);
+      });
     }
   }, [user]);
 
@@ -50,9 +52,15 @@ const Profile: FC = () => {
         <h2>{content.subtitle}</h2>
       </div>
       <div className="profile">
-        <div className="profile_activityContent">{activity && <Activity sessions={activity} />}</div>
-        <div className="profile_sessions">{averageSessions && <Sessions averageSessions={averageSessions} />}</div>
-        <div className="profile_performance"></div>
+        <div className="profile_activityContent">
+          <Activity sessions={activity!} />
+        </div>
+        <div className="profile_sessions">
+          <Sessions averageSessions={averageSessions!} />
+        </div>
+        <div className="profile_performance">
+          <Performance performance={performance!} />
+        </div>
         <div className="profile_score"></div>
         <div className="profile_infoContent">
           <CardFoodDetail
