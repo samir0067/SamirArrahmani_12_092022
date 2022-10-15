@@ -1,5 +1,6 @@
 import axios from "axios";
 import { UserPerformance } from "utils/types";
+import { userPerformance } from "utils/mocks/userPerformance";
 
 /**
  * Get the user's performance in the api or mock
