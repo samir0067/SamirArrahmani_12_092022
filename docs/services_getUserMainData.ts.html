@@ -104,15 +104,15 @@ const getUserMainData = (uid: number): Promise&lt;UserMainData> => {
         const dataFiltered = userMainData.filter(function (e: UserMainData) {
           return e.data.id === uid;
         });
-        console.log("activity mock", dataFiltered[0]);
+        // console.log("user mock", dataFiltered[0]);
         return dataFiltered[0];
       } else {
-        console.log("activity api", data);
+        // console.log("user api", data);
         return data;
       }
     })
-    .catch(({ response }) => {
-      throw new Error(response);
+    .catch((error) => {
+      throw new Error(error);
     });
 };
 

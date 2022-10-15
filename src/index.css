@@ -127,6 +127,15 @@
   color: #020203;
 }
 
+.radarChart {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.radarChart_polarGrid {
+  padding: 20px 0;
+}
+
 .titleSessions {
   padding: 0 30px;
   opacity: 0.5;
@@ -186,7 +195,8 @@
   position: absolute;
   left: 0;
   width: 117px;
-  height: 100vh;
+  height: 90.21vh;
+  padding-top: 9.79vh;
   display: flex;
   justify-content: center;
   color: white;
