@@ -7,7 +7,7 @@ type SessionsProps = {
   averageSessions: SessionsAverage[];
 };
 
-const Sessions: FC<SessionsProps> = ({ averageSessions }) => {
+const Sessions: FC<SessionsProps> = ({ averageSessions }: SessionsProps) => {
   return (
     <Fragment>
       <h3 className="titleSessions">

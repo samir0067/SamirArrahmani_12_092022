@@ -28,21 +28,16 @@ export type SessionsActivity = {
   calories: number;
 };
 
-export type SessionsAverage = {
-  day: number;
-  sessionLength: number;
-};
-
-export type DataPerformance = {
-  value: number;
-  kind: number;
-};
-
 export type UserActivity = {
   data: {
     userId?: string;
     sessions?: SessionsActivity[];
   };
+};
+
+export type SessionsAverage = {
+  day: number;
+  sessionLength: number;
 };
 
 export type UserSessionsAverage = {
@@ -52,15 +47,13 @@ export type UserSessionsAverage = {
   };
 };
 
+export type SessionsPerformance = {
+  value: number;
+  kind: string;
+};
+
 export type UserPerformance = {
   userId: number;
-  kind: {
-    1: "cardio";
-    2: "energy";
-    3: "endurance";
-    4: "strength";
-    5: "speed";
-    6: "intensity";
-  };
-  data: DataPerformance[];
+  kind: SessionsPerformance[];
+  data: SessionsPerformance[];
 };
