@@ -1,4 +1,10 @@
-# Start the Sport see project
+## Start the back-end SportSee
+
+### `https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard`
+
+Run the command to retrieve the remote repo. and follow the instructions of the REDME.md
+
+## Start the SportSee project
 
 ### `https://github.com/samir0067/SamirArrahmani_12_092022.git`
 
