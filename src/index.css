@@ -308,6 +308,35 @@
   height: 263px;
   border-radius: 5px;
   background-color: #FBFBFB;
+  position: relative;
+  width: 100%;
+}
+.profile_score h3 {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 0.95rem;
+}
+.profile_score_textContent {
+  position: absolute;
+  top: 25%;
+  left: 41%;
+  width: 60px;
+  text-align: center;
+}
+.profile_score_textContent_title {
+  color: #282D30;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 0;
+}
+.profile_score_textContent_text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  margin-top: 5px;
+  color: #74798C;
 }
 .profile_infoContent {
   grid-area: 1/4/3/5;

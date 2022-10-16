@@ -57,6 +57,35 @@
     height: 263px;
     border-radius: 5px;
     background-color: variables.$whiteGrey;
+    position: relative;
+    width: 100%;
+    h3 {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-size: 0.95rem;
+    }
+    &_textContent {
+      position: absolute;
+      top: 25%;
+      left: 41%;
+      width: 60px;
+      text-align: center;
+      &_title {
+        color: variables.$greyBlack;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 26px;
+        margin-bottom: 0;
+      }
+      &_text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 26px;
+        margin-top: 5px;
+        color: variables.$greyText;
+      }
+    }
   }
   &_infoContent {
     grid-area: 1 / 4 / 3 / 5;

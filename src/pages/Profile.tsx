@@ -13,6 +13,7 @@ import Activity from "components/Activity";
 import { SessionsActivity, SessionsAverage, SessionsPerformance } from "utils/types";
 import Sessions from "components/Sessions";
 import Performance from "components/Performance";
+import Score from "components/Score";
 
 const Profile: FC = () => {
   const navigate = useNavigate();
@@ -20,11 +21,13 @@ const Profile: FC = () => {
   const [activity, setActivity] = useState<SessionsActivity[]>();
   const [averageSessions, setAverageSessions] = useState<SessionsAverage[]>();
   const [performance, setPerformance] = useState<SessionsPerformance[]>();
+  const [scoreToday, setScoreToday] = useState<number>();
 
   useEffect(() => {
     if (user === undefined) {
       navigate("/");
     } else {
+      setScoreToday(user.data.todayScore ? user.data.todayScore : user.data.score);
       getUserActivity(user.data.id).then((activityData) => {
         setActivity(activityData.data.sessions);
       });
@@ -40,6 +43,8 @@ const Profile: FC = () => {
   const content = {
     title: `Bonjour `,
     subtitle: "Félicitation ! Vous avez explosé vos objectifs hier 👏",
+    scoreTitle: "Score",
+    scoreTexte: "de votre objectif",
   };
 
   return (
@@ -61,7 +66,14 @@ const Profile: FC = () => {
         <div className="profile_performance">
           <Performance performance={performance!} />
         </div>
-        <div className="profile_score"></div>
+        <div className="profile_score">
+          <h3>{content.scoreTitle}</h3>
+          <div className="profile_score_textContent">
+            <p className="profile_score_textContent_title">{scoreToday && scoreToday * 100}%</p>
+            <p className="profile_score_textContent_text">{content.scoreTexte}</p>
+          </div>
+          <Score scoreToday={scoreToday} />
+        </div>
         <div className="profile_infoContent">
           <CardFoodDetail
             value={user?.data.keyData.calorieCount}
