@@ -3,6 +3,9 @@ import { Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { SessionsAverage } from "utils/types";
 import { CustomTooltip } from "components/CustomTooltip";
 
+/**
+ * Type for Sessions component
+ */
 type SessionsProps = {
   averageSessions: SessionsAverage[];
 };

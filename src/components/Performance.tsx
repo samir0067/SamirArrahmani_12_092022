@@ -2,6 +2,9 @@ import React, { FC, Fragment } from "react";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from "recharts";
 import { SessionsPerformance } from "utils/types";
 
+/**
+ * Type for Performance component
+ */
 type PerformanceProps = {
   performance: SessionsPerformance[];
 };

@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
 
+/**
+ * Type for Score component
+ */
 type ScoreProps = {
   scoreToday?: number;
 };

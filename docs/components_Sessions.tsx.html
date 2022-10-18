@@ -94,12 +94,15 @@ import { Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { SessionsAverage } from "utils/types";
 import { CustomTooltip } from "components/CustomTooltip";
 
+/**
+ * Type for Sessions component
+ */
 type SessionsProps = {
   averageSessions: SessionsAverage[];
 };
 
 /**
- *  average session duration in the form of a LineChart.
+ * average session duration in the form of a LineChart.
  * @param averageSessions
  * @constructor
  */
