@@ -6,6 +6,11 @@ type PerformanceProps = {
   performance: SessionsPerformance[];
 };
 
+/**
+ * displays the performance of the day
+ * @param performance
+ * @constructor
+ */
 const Performance: FC<PerformanceProps> = ({ performance }: PerformanceProps) => {
   const kindFr = {
     1: "Intensité",

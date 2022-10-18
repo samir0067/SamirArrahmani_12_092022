@@ -7,6 +7,11 @@ type SessionsProps = {
   averageSessions: SessionsAverage[];
 };
 
+/**
+ * average session duration in the form of a LineChart.
+ * @param averageSessions
+ * @constructor
+ */
 const Sessions: FC<SessionsProps> = ({ averageSessions }: SessionsProps) => {
   return (
     <Fragment>

@@ -5,6 +5,11 @@ type ScoreProps = {
   scoreToday?: number;
 };
 
+/**
+ * average score as a RadialBarChart
+ * @param scoreToday
+ * @constructor
+ */
 const Score: FC<ScoreProps> = ({ scoreToday }) => {
   const data = [
     {
