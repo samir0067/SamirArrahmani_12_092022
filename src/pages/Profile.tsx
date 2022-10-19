@@ -6,14 +6,12 @@ import energy from "assets/energy.svg";
 import chicken from "assets/chicken.svg";
 import apple from "assets/apple.svg";
 import cheeseburger from "assets/cheeseburger.svg";
-import getUserActivity from "services/getUserActivity";
-import getUserAverageSessions from "services/getUserAverageSessions";
-import getUserPerformance from "services/getUserPerformance";
 import Activity from "components/Activity";
 import { SessionsActivity, SessionsAverage, SessionsPerformance } from "utils/types";
 import Sessions from "components/Sessions";
 import Performance from "components/Performance";
 import Score from "components/Score";
+import callApi from "services/callApi";
 
 const Profile: FC = () => {
   const navigate = useNavigate();
@@ -28,15 +26,15 @@ const Profile: FC = () => {
       navigate("/");
     } else {
       setScoreToday(user.data.todayScore ? user.data.todayScore : user.data.score);
-      getUserActivity(user.data.id).then((activityData) => {
-        setActivity(activityData.data.sessions);
-      });
-      getUserAverageSessions(user?.data.id).then((averageSessionsData) => {
-        setAverageSessions(averageSessionsData.data.sessions);
-      });
-      getUserPerformance(user?.data.id).then((performanceData) => {
-        setPerformance(performanceData.data);
-      });
+      const fetchApiData = async () => {
+        const userPerformance = await callApi.getUserPerformance(user.data.id);
+        setPerformance(userPerformance?.data.data);
+        const userAverageSession = await callApi.getUserAverageSession(user.data.id);
+        setAverageSessions(userAverageSession?.data.sessions);
+        const userActivityData = await callApi.getUserActivity(user.data.id);
+        setActivity(userActivityData?.data.sessions);
+      };
+      fetchApiData();
     }
   }, [user]);
 
@@ -111,4 +109,5 @@ const Profile: FC = () => {
     </section>
   );
 };
+
 export default Profile;

@@ -2,14 +2,14 @@ import React, { FC, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "utils/context/userContext";
 import Button from "components/Button";
-import getUserMainData from "services/getUserMainData";
+import callApi from "services/callApi";
 
 const Home: FC = () => {
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
 
   const handleUser = (uid: number) => {
-    getUserMainData(uid).then((userData) => {
+    callApi.getUserMainData(uid).then((userData) => {
       setUser(userData);
     });
   };

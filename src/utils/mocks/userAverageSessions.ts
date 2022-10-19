@@ -1,4 +1,6 @@
-export const userAverageSessions = [
+import { UserSessionsAverage } from "utils/types";
+
+export const userAverageSessions: UserSessionsAverage[] = [
   {
     data: {
       userId: 12,

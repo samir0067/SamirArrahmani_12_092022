@@ -30,7 +30,7 @@ export type SessionsActivity = {
 
 export type UserActivity = {
   data: {
-    userId?: string;
+    userId?: number;
     sessions?: SessionsActivity[];
   };
 };
@@ -49,11 +49,20 @@ export type UserSessionsAverage = {
 
 export type SessionsPerformance = {
   value: number;
-  kind: string;
+  kind: number;
 };
 
 export type UserPerformance = {
-  userId: number;
-  kind: SessionsPerformance[];
-  data: SessionsPerformance[];
+  data: {
+    userId: number;
+    kind: {
+      1: string;
+      2: string;
+      3: string;
+      4: string;
+      5: string;
+      6: string;
+    };
+    data: SessionsPerformance[];
+  };
 };

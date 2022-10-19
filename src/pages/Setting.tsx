@@ -5,7 +5,6 @@ import { UserContext } from "utils/context/userContext";
 const Setting: FC = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  // console.log("User context setting ==>", user);
 
   useEffect(() => {
     if (user === undefined) {

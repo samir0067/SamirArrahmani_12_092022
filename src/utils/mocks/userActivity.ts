@@ -1,4 +1,6 @@
-export const userActivity = [
+import { UserActivity } from "utils/types";
+
+export const userActivity: UserActivity[] = [
   {
     data: {
       userId: 12,

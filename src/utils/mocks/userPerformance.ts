@@ -1,4 +1,6 @@
-export const userPerformance = [
+import { UserPerformance } from "utils/types";
+
+export const userPerformance: UserPerformance[] = [
   {
     data: {
       userId: 12,
